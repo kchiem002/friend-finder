@@ -3,6 +3,7 @@ let answersArray = []
 let inputName
 let uploadPhoto
 let surveyAnswers
+let friendsList
 
 const formValidation = () => {
     inputName = document.querySelector('#inputName').value
@@ -34,18 +35,22 @@ document.querySelector('#submitAnswers').addEventListener('click', e => {
                 name: `${inputName}`,
                 photo: `${uploadPhoto}`,
                 surveyAnswers: [
-                    document.querySelector('#q1').value,
-                    document.querySelector('#q2').value,
-                    document.querySelector('#q3').value,
-                    document.querySelector('#q4').value,
-                    document.querySelector('#q5').value,
-                    document.querySelector('#q6').value,
-                    document.querySelector('#q7').value,
-                    document.querySelector('#q8').value,
-                    document.querySelector('#q9').value,
-                    document.querySelector('#q10').value,
+                    parseInt(document.querySelector('#q1').value),
+                    parseInt(document.querySelector('#q2').value),
+                    parseInt(document.querySelector('#q3').value),
+                    parseInt(document.querySelector('#q4').value),
+                    parseInt(document.querySelector('#q5').value),
+                    parseInt(document.querySelector('#q6').value),
+                    parseInt(document.querySelector('#q7').value),
+                    parseInt(document.querySelector('#q8').value),
+                    parseInt(document.querySelector('#q9').value),
+                    parseInt(document.querySelector('#q10').value),
                 ]
             })
+        })
+        .then(_ => {
+            console.log('New Friend Added')
+            calculation()
         })
     }
     else {
@@ -55,3 +60,7 @@ document.querySelector('#submitAnswers').addEventListener('click', e => {
     }
 })
 
+const calculation = () => {
+    friendsList = []
+    
+}

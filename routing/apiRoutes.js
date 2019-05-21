@@ -6,7 +6,8 @@ module.exports = (app) => {
     })
 
     app.post('/friends', (req, res) => {
-        friends.push(req.body)
-        res.json('OK')
+        let newFriend = req.body
+        friends.push(newFriend)
+        res.send(friends)
     })
 }
